@@ -10,7 +10,6 @@ export default function PrimaryButton({children, onPress}) {
                     <Text style={styles.buttonText}>{children}</Text>
                 </Pressable>
             </View>    
-        
     );
 }
 
