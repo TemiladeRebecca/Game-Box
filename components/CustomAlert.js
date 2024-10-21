@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Modal, View, Text, Button, StyleSheet } from 'react-native';
 
 export default function CustomAlert({isModalVisible, closeAlert}) {
