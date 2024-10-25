@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import {View, TextInput, StyleSheet, Alert} from 'react-native'
-import PrimaryButton from '../components/PrimaryButton';
-import CustomAlert from '../components/CustomAlert';
+import PrimaryButton from '../components/ui/PrimaryButton';
+import CustomAlert from '../components/ui/CustomAlert';
+import Color from '../constants/Color';
 
-export default function StartingScreen() {
+export default function StartingScreen({pickedNumber}) {
     const [enteredNumber, setEnteredNumber] = useState('');
 
     const [modalVisible, setModalVisible] = useState(false);
@@ -34,6 +35,8 @@ export default function StartingScreen() {
             // );
             return;
         }
+
+        pickedNumber(chosenNumber);
     }
     return (
         <View style={styles.inputContainer}>
@@ -67,7 +70,7 @@ const styles = StyleSheet.create({
         marginTop: '30%',
         marginHorizontal: 30,
         padding: 16,
-        backgroundColor: '#3b021f',
+        backgroundColor: Color.primary700,
         borderRadius: 10,
         elevation: 10,
         shadowColor: 'black',
@@ -81,9 +84,9 @@ const styles = StyleSheet.create({
         padding: 4,
         fontSize: 32,
         fontWeight: 'bold',
-        color: '#FFD700',
+        color: Color.primaryaccent600,
         borderBottomWidth: 3,
-        borderBottomColor: '#FFD700',
+        borderBottomColor: Color.primaryaccent600,
         marginBottom: 12
     },
     buttonsContainer: {
